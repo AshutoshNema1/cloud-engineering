@@ -1,0 +1,13 @@
+# Secrets and environment files
+.env
+.env.*
+# Logs
+*.log
+# Python
+__pycache__/
+*.pyc
+# Node.js
+node_modules/
+# OS Files
+.DS_Strore
+Thumbs.db

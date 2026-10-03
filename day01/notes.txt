@@ -1,0 +1,2 @@
+Linux practice : Day 01.
+Today I learned about hidden files, ls which gives the long list of files, ls -l, ls -a shows hidden files, ls -h -> represents data in human readable form.
