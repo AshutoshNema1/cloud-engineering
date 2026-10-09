@@ -1,0 +1,136 @@
+# Day 02 - Linux Commands and Practice Notes
+
+## 1. File Viewing Commands
+cat filename.txt
+cat -n filename.txt
+less filename.txt
+head filename.txt
+head -n 5 filename.txt
+tail filename.txt
+tail -n 5 filename.txt
+tail -f filename.log
+
+cat: Display file contents.
+cat -n: Display contents with line numbers.
+less: Read a file page by page. Press q to quit.
+head: Display the first 10 lines by default.
+head -n 5: Display the first 5 lines.
+tail: Display the last 10 lines by default.
+tail -n 5: Display the last 5 lines.
+tail -f: Follow new lines added to a file, useful for monitoring logs.
+
+## 2. Finding Files and Directories
+find . -name "*.log"
+find . -name "*.txt"
+find . -type f
+find . -type d
+
+find .: Search from the current directory.
+-name: Match filenames or filename patterns.
+-type f: Find regular files.
+-type d: Find directories.
+
+## 3. Searching Text with grep
+grep "Linux" practice.log
+grep -n "Linux" practice.log
+grep "ERROR" app.log
+grep -i "error" app.log
+grep -v "ERROR" app.log
+grep -nvi "error" app.log
+grep -r "Linux" .
+grep -rn "ERROR" .
+
+grep: Search for matching text.
+-n: Show line numbers.
+-i: Ignore uppercase/lowercase differences.
+-v: Show lines that do not match.
+-r: Search recursively through directories.
+-nr: Search recursively and show line numbers.
+
+## 4. Sorting and Removing Duplicates
+sort fruits.txt
+sort -r fruits.txt
+sort fruits.txt > sorted-fruits.txt
+sort fruits.txt | uniq
+sort fruits.txt | uniq -c
+uniq sorted-fruits.txt
+
+sort: Sort lines alphabetically; does not change the original file.
+sort -r: Sort in reverse order.
+>: Write output to a file, replacing its previous contents.
+|: Pass one command's output to another command.
+uniq: Remove adjacent duplicate lines.
+sort | uniq: Sort first, then remove duplicates.
+uniq -c: Count adjacent occurrences after sorting.
+
+IMPORTANT: Never run sort fruits.txt > fruits.txt.
+The shell empties the output file before sort reads it.
+Use a different output filename.
+
+## 5. Extracting Fields with cut
+cut -d: -f1 users.txt
+cut -d: -f2 users.txt
+cut -d: -f3 users.txt
+cut -d: -f1 users.txt | sort
+cut -d: -f1 users.txt | sort | uniq
+
+-d: Set the delimiter; here it is a colon.
+-f1: Extract the first field.
+-f2: Extract the second field.
+-f3: Extract the third field.
+Pipes combine commands.
+
+## 6. Output Redirection
+echo "First Line" > redirect-test.txt
+echo "Second Line" >> redirect-test.txt
+echo "Third Line" >> redirect-test.txt
+cat redirect-test.txt
+wc -l redirect-test.txt
+wc -l < redirect-test.txt
+
+>: Create or overwrite a file.
+>>: Append output to a file.
+<: Supply a file as standard input.
+wc -l: Count lines.
+
+## 7. File Permissions with chmod
+ls -l
+chmod u+x permissions.txt
+chmod g+w permissions.txt
+chmod o=x permissions.txt
+chmod o-x permissions.txt
+chmod o+r permissions.txt
+chmod g-w permissions.txt
+chmod 644 permissions.txt
+chmod 600 permissions.txt
+chmod 755 permissions.txt
+
+u: User/owner.
+g: Group.
+o: Others.
+a: All categories.
++: Add permission.
+-: Remove permission.
+=: Set the specified permissions exactly.
+
+r = 4: Read.
+w = 2: Write.
+x = 1: Execute for files; traverse/access for directories.
+
+644: Owner can read/write; group and others can read.
+600: Only the owner can read/write.
+755: Owner can read/write/execute; group and others can read/execute.
+
+For directories:
+Read allows listing names.
+Write allows creating, deleting, or renaming entries when other required permissions allow it.
+Execute allows traversal/access.
+
+## 8. Commands to Learn Next
+chown
+sudo
+
+chown: Change file or directory ownership.
+sudo: Run a command with elevated privileges when authorized.
+
+Use elevated privileges carefully. Understand a command before running it with sudo.
