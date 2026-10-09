@@ -1,0 +1,5 @@
+ashutosh:1001:/home/ashutosh
+rahul:1002:/home/rahul
+ashutosh:1001:/home/ashutosh
+priya:1003:/home/priya
+rahul:1002:/home/rahul
