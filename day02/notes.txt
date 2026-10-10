@@ -134,3 +134,37 @@ chown: Change file or directory ownership.
 sudo: Run a command with elevated privileges when authorized.
 
 Use elevated privileges carefully. Understand a command before running it with sudo.
+
+## 9. Changing Ownership with chown
+
+ls -l chown-practice.txt
+sudo chown root:root chown-practice.txt
+sudo chown ashutosh_nema:ashutosh_nema chown-practice.txt
+
+chown OWNER FILE: Change the owner of a file.
+chown OWNER:GROUP FILE: Change both owner and group.
+sudo chown: Run the ownership change with elevated privileges.
+
+Example:
+sudo chown root:root chown-practice.txt
+
+This changes the file owner and group to root.
+Changing ownership does not automatically change file permissions.
+Use a dedicated practice file when learning ownership commands.
+
+## 10. Running Commands with sudo
+
+whoami
+sudo whoami
+id
+sudo chown root:root chown-practice.txt
+
+whoami: Display the effective user.
+sudo command: Run a command with elevated privileges when authorized.
+sudo whoami: Typically prints root when sudo succeeds.
+id: Display user ID, primary group ID, and group memberships.
+
+Important:
+sudo elevates an individual command, not the entire normal shell.
+Use sudo only when necessary.
+Understand a command before running it with elevated privileges.
