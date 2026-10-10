@@ -12,7 +12,10 @@ A hands-on learning journey covering Linux, Cloud Engineering, Data Engineering,
 
 ### Topics Learned
 - `pwd` — Display the current working directory
-- `ls`, `ls -a`, `ls -l`, `ls -lah` — List files and directories
+- `ls` — List files and directories
+- `ls -a` — Display hidden files and directories
+- `ls -l` — Display detailed file information
+- `ls -lah` — Display detailed information in a human-readable format, including hidden files
 - `cd` — Navigate directories
 - `mkdir` — Create directories
 - `touch` — Create empty files
@@ -43,32 +46,65 @@ A hands-on learning journey covering Linux, Cloud Engineering, Data Engineering,
 
 ## Day 2 — Linux Files, Text Processing, and Permissions
 
-### Topics Practiced
-- File viewing: `cat`, `less`, `head`, `tail`
-- Finding files and directories: `find`
-- Searching text: `grep`
-- Sorting data: `sort`
-- Removing adjacent duplicate lines: `uniq`
-- Extracting fields: `cut`
-- Pipes: `|`
-- Input and output redirection: `<`, `>`, `>>`
-- Understanding file permissions with `ls -l`
-- Modifying permissions using `chmod`
-- Symbolic and numeric permission modes
+### File Viewing
+- `cat` — Display file contents
+- `cat -n` — Display file contents with line numbers
+- `less` — Read files page by page
+- `head` — Display the beginning of a file
+- `tail` — Display the end of a file
+- `tail -f` — Follow new lines added to a file, useful for monitoring logs
 
-### Practice
+### Finding Files and Searching Text
+- `find` — Search for files and directories
+- `find -name` — Find entries matching a filename pattern
+- `find -type f` — Find regular files
+- `find -type d` — Find directories
+- `grep` — Search for matching text
+- `grep -n` — Display matching lines with line numbers
+- `grep -i` — Search without case sensitivity
+- `grep -v` — Display lines that do not match
+- `grep -r` — Search recursively through directories
+
+### Sorting and Text Processing
+- `sort` — Sort lines of text
+- `sort -r` — Sort lines in reverse order
+- `uniq` — Remove adjacent duplicate lines
+- `uniq -c` — Count adjacent occurrences of lines
+- `cut` — Extract selected fields from lines
+- `cut -d: -f1` — Extract the first field using a colon delimiter
+- Pipes (`|`) — Pass one command's output to another command
+
+### Input and Output Redirection
+- `>` — Redirect output to a file, overwriting existing contents
+- `>>` — Append output to a file
+- `<` — Redirect a file's contents to standard input
+- `wc -l` — Count lines in a file or input
+
+### File Permissions and Ownership
+- `ls -l` — Inspect file permissions and ownership
+- `chmod` — Change file or directory permissions
+- Symbolic permissions using `u`, `g`, and `o`
+- Permission operators: `+`, `-`, and `=`
+- Numeric permissions using `r = 4`, `w = 2`, and `x = 1`
+- Common permission modes: `644`, `600`, and `755`
+- Directory permissions and the role of read, write, and execute
+- `chown` — Change file ownership and group
+- `sudo` — Run commands with elevated privileges when authorized
+
+### Hands-on Practice
 - Created and searched text and log files
+- Used `find` and `grep` to locate files and search their contents
 - Sorted text and removed duplicate entries
-- Extracted fields from colon-separated data
-- Practiced input and output redirection
+- Counted duplicate lines using `uniq -c`
+- Extracted fields from colon-separated data using `cut`
+- Practiced pipes and input/output redirection
 - Changed file and directory permissions
+- Changed ownership of a practice file to `root` and restored it to the original user
+- Compared `whoami` with `sudo whoami`
+- Documented commands and explanations in a separate notes file
 
-### Notes
-See [`day02/notes.txt`](day02/notes.txt) for command examples and explanations.
-
-### Still to Complete
-- `chown` — Changing file ownership
-- `sudo` — Running commands with elevated privileges
+### Day 2 Notes
+See [day02/notes.txt](day02/notes.txt) for command examples and explanations.
 
 ---
 
